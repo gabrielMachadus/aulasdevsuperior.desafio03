@@ -25,6 +25,11 @@ public class ClientController {
         return  clientService.findPageable(page);
     }
 
+    @PostMapping
+    public ClientDTO insert(@RequestBody ClientDTO clientDTO){
+        return clientService.insert(clientDTO);
+    }
+
     @DeleteMapping(value = "/{id}")
     public void deleteByID(@PathVariable Long id){
         clientService.deleteById(id);
