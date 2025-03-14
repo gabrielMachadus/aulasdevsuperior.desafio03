@@ -1,4 +1,4 @@
-package br.com.devsuperior.desafio03.entities.controllers;
+package br.com.devsuperior.desafio03.controllers;
 
 import br.com.devsuperior.desafio03.dto.ClientDTO;
 import br.com.devsuperior.desafio03.services.ClientService;
