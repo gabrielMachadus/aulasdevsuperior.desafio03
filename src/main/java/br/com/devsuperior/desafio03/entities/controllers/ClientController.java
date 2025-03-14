@@ -3,9 +3,9 @@ package br.com.devsuperior.desafio03.entities.controllers;
 import br.com.devsuperior.desafio03.dto.ClientDTO;
 import br.com.devsuperior.desafio03.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/clients")
@@ -21,8 +21,8 @@ public class ClientController {
     }
 
     @GetMapping
-    public List<ClientDTO> findAll(){
-        return clientService.findAll();
+    public Page<ClientDTO> findPageable(Pageable page){
+        return  clientService.findPageable(page);
     }
 
     @DeleteMapping(value = "/{id}")

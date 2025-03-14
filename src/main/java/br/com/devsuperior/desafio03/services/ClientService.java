@@ -4,9 +4,10 @@ import br.com.devsuperior.desafio03.dto.ClientDTO;
 import br.com.devsuperior.desafio03.entities.Client;
 import br.com.devsuperior.desafio03.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
 
 @Service
 public class ClientService {
@@ -19,9 +20,9 @@ public class ClientService {
     }
 
     @Transactional(readOnly = true)
-    public List<ClientDTO> findAll() {
-        List<Client> clients = clientRepository.findAll();
-        return clients.stream().map(x -> new ClientDTO(x)).toList();
+    public Page<ClientDTO> findPageable(Pageable pageable) {
+        Page<Client> result = clientRepository.findAll(pageable);
+        return result.map(x-> new ClientDTO(x));
     }
 
     public void deleteById(Long id){
