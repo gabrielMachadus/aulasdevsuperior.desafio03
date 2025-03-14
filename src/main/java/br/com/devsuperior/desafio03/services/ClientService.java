@@ -15,4 +15,8 @@ public class ClientService {
     public ClientDTO findById(Long id){
         return new ClientDTO(clientRepository.findById(id).get());
     }
+
+    public void deleteById(Long id){
+        clientRepository.deleteById(id);
+    }
 }
