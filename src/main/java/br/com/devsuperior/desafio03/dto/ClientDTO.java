@@ -7,6 +7,7 @@ public class ClientDTO {
     private Long id;
     private String name;
     private String cpf;
+    private Double income;
     private LocalDate birthDate;
     private Integer children;
 
@@ -20,6 +21,10 @@ public class ClientDTO {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public Double getIncome() {
+        return income;
     }
 
     public LocalDate getBirthDate() {
@@ -37,6 +42,7 @@ public class ClientDTO {
         id = entity.getId();
         name = entity.getName();
         cpf = entity.getCpf();
+        income = entity.getIncome();
         birthDate = entity.getBirthDate();
         children = entity.getChildren();
     }
