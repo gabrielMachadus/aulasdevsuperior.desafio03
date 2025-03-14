@@ -1,17 +1,13 @@
 package br.com.devsuperior.desafio03.entities;
 
+import br.com.devsuperior.desafio03.dto.ClientDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_client")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,5 +56,15 @@ public class Client {
 
     public void setChildren(Integer children) {
         this.children = children;
+    }
+
+    public Client() {
+    }
+
+    public Client(ClientDTO dto){
+        this.name = dto.getName();
+        this.cpf = dto.getCpf();
+        this.birthDate = dto.getBirthDate();
+        this.children = dto.getChildren();
     }
 }
