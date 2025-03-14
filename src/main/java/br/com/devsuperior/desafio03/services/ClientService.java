@@ -27,9 +27,7 @@ public class ClientService {
 
     @Transactional
     public ClientDTO insert(ClientDTO dto){
-        Client client = new Client(dto);
-        client = clientRepository.save(client);
-        return new ClientDTO(client);
+        return new ClientDTO(clientRepository.save(new Client(dto)));
     }
 
     public void deleteById(Long id){
