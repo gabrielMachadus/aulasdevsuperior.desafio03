@@ -5,7 +5,11 @@ import br.com.devsuperior.desafio03.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping(value = "/clients")
@@ -15,19 +19,21 @@ public class ClientController {
     private ClientService clientService;
 
     @GetMapping(value = "/{id}")
-    public ClientDTO findById(@PathVariable Long id){
-        ClientDTO clientDTO = clientService.findById(id);
-        return clientDTO;
+    public ResponseEntity<ClientDTO> findById(@PathVariable Long id){
+        return ResponseEntity.ok(clientService.findById(id));
     }
 
     @GetMapping
-    public Page<ClientDTO> findPageable(Pageable page){
-        return  clientService.findPageable(page);
+    public ResponseEntity<Page<ClientDTO>>findPageable(Pageable page){
+        return  ResponseEntity.ok(clientService.findPageable(page));
     }
 
     @PostMapping
-    public ClientDTO insert(@RequestBody ClientDTO clientDTO){
-        return clientService.insert(clientDTO);
+    public ResponseEntity<ClientDTO> insert(@RequestBody ClientDTO clientDTO){
+        return ResponseEntity.created(
+                ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                        .buildAndExpand(clientDTO.getId()).toUri())
+                .body(clientService.insert(clientDTO));
     }
 
     @DeleteMapping(value = "/{id}")
