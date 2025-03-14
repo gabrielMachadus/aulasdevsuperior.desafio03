@@ -1,12 +1,7 @@
 package br.com.devsuperior.desafio03.dto;
 
 import br.com.devsuperior.desafio03.entities.Client;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
 import java.time.LocalDate;
-
-@NoArgsConstructor
 
 public class ClientDTO {
     private Long id;
@@ -33,6 +28,9 @@ public class ClientDTO {
 
     public Integer getChildren() {
         return children;
+    }
+
+    public ClientDTO() {
     }
 
     public ClientDTO(Client entity) {
