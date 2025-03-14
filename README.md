@@ -1,2 +1,5 @@
 # aulasdevsuperior.desafio03
 Projeto 03 de desafio do curso DevSuperior
+- Criação da tabela TB_CLIENT com os campos
+- Seeding do banco com 10 registros, realizado.
+![image](https://github.com/user-attachments/assets/1444ffdb-0d83-47c2-be95-96c7b558fc88)
