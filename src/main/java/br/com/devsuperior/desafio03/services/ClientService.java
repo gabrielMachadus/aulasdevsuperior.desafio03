@@ -30,6 +30,19 @@ public class ClientService {
         return new ClientDTO(clientRepository.save(new Client(dto)));
     }
 
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO dto){
+        Client clientToUpdate = clientRepository.findById(id).get();
+        clientToUpdate.setName(dto.getName());
+        clientToUpdate.setChildren(dto.getChildren());
+        clientToUpdate.setCpf(dto.getCpf());
+        clientToUpdate.setIncome(dto.getIncome());
+        clientToUpdate.setBirthDate(dto.getBirthDate());
+
+        return new ClientDTO(clientRepository.save(clientToUpdate));
+    }
+
+    @Transactional
     public void deleteById(Long id){
         clientRepository.deleteById(id);
     }
