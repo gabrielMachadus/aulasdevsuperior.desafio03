@@ -27,6 +27,8 @@ public class ClientController {
         return  ResponseEntity.ok(clientService.findPageable(page));
     }
 
+
+
     @PostMapping
     public ResponseEntity<ClientDTO> insert(@RequestBody ClientDTO clientDTO){
         return ResponseEntity.created(
