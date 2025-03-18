@@ -47,15 +47,15 @@ public class ClientService {
 
             return new ClientDTO(clientRepository.save(clientToUpdate));
         }catch (EntityNotFoundException e){
-             throw new ResourceNotFoundException("ID não encontrado");
+             throw new ResourceNotFoundException("ID não encontrado para atualizar");
         }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void deleteById(Long id) {
-        /*if (!clientRepository.existsById(id)) {
-            throw new ResourceNotFoundException("ID não encontrado");
-        }*/
+        if (!clientRepository.existsById(id)) {
+            throw new ResourceNotFoundException("ID não encontrado para deletar.");
+        }
         try {
             clientRepository.deleteById(id);
         }
