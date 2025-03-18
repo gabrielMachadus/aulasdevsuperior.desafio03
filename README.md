@@ -6,4 +6,14 @@ Projeto 03 de desafio do curso DevSuperior
 
 
 Condições do execicio:
+1-ok
+2-ok
+3-ok
+4-ok
+5-fazer
+6-ok
+7-ok
+8-fazer
+9-ok
+10-ok
 ![image](https://github.com/user-attachments/assets/70a408e0-0b43-42e4-8442-01c8b50e6aa7)
