@@ -4,6 +4,8 @@ Projeto 03 de desafio do curso DevSuperior
 - Seeding do banco com 10 registros, realizado.
 ![image](https://github.com/user-attachments/assets/1444ffdb-0d83-47c2-be95-96c7b558fc88)
 
+checklist:
+![image](https://github.com/user-attachments/assets/70a408e0-0b43-42e4-8442-01c8b50e6aa7)
 
 Condições do execicio:
 1-ok
@@ -26,4 +28,5 @@ Condições do execicio:
 ![image](https://github.com/user-attachments/assets/d829fc10-9d23-4edd-9239-e51a981d3b9a)
 
 10-ok
-![image](https://github.com/user-attachments/assets/70a408e0-0b43-42e4-8442-01c8b50e6aa7)
+![image](https://github.com/user-attachments/assets/ca2e1f27-4652-4928-9415-dca4c0a53589)
+
