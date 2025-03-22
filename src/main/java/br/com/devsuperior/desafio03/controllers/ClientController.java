@@ -46,8 +46,9 @@ public class ClientController {
 
 
     @DeleteMapping(value = "/{id}")
-    public void deleteByID(@PathVariable Long id){
+    public ResponseEntity<?> deleteByID(@PathVariable Long id){
         clientService.deleteById(id);
+        return ResponseEntity.ok().body("Cliente "+id+" deletado com sucesso!");
     }
 
 
